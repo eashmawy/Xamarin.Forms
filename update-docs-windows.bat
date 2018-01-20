@@ -21,9 +21,6 @@ tools\mdoc\mdoc update --delete Xamarin.Forms.Pages\bin\release\netstandard2.0\X
 IF %ERRORLEVEL% NEQ 0 (goto fail)
 
 IF EXIST _docs.xml (erase _docs.xml)
-for /r docs %%i in (*.xml) do type %%i >> _docs.xml
-fc docs.xml _docs.xml > nul 2> nul
-IF %ERRORLEVEL% NEQ 0 (goto fail)
 
 erase docs.xml _docs.xml
 echo No changes detected.
